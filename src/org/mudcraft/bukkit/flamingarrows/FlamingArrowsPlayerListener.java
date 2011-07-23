@@ -87,8 +87,8 @@ public class FlamingArrowsPlayerListener extends PlayerListener {
         final Player p = event.getPlayer();
         // To use Flaming Arrows! the player must be an operator or be
         // on the player white-list.
-        if (!p.isOp() && !getPlugin().getSettings().isPlayerWhitelisted(p) && !FlamingArrows.permissionHandler.has(p, "FlamingArrows.igniteMobs") && !FlamingArrows.permissionHandler.has(p, "FlamingArrows.ignitePlayers") && !FlamingArrows.permissionHandler.has(p, "FlamingArrows.igniteBlocks") )
-            return;
+        //if (!p.isOp() && !getPlugin().getSettings().isPlayerWhitelisted(p) && !FlamingArrows.permissionHandler.has(p, "FlamingArrows.ignite"))
+        //    return;
         
         // Save a reference to the item stack in the player's hand.
         final ItemStack itemStack = event.getItem();
@@ -100,7 +100,7 @@ public class FlamingArrowsPlayerListener extends PlayerListener {
             if (itemStack == null ||
                 itemStack.getType() != getPlugin().getSettings().getWand())
                 return;
-            if (!FlamingArrows.permissionHandler.has(p,"FireArrows.fire"))
+            if (!FlamingArrows.permissionHandler.has(p,"FlamingArrows.ignite"))
             	return;
             
             
